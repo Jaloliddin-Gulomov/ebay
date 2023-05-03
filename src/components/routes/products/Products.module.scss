@@ -1,0 +1,20 @@
+.products__page{
+    display: grid;
+    padding: 27px 94px;
+    justify-content: space-around;
+    grid-template-columns: repeat(4, 257px);
+    gap: 16px;
+}
+.product__card{
+    color: #111820;
+    text-decoration: none;
+    p{
+        margin-bottom: 14px;
+    }
+    img{
+        height: 241px;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 5px;
+    }
+}

@@ -1,0 +1,29 @@
+.product__page{
+    margin-top: 50px;
+    display: flex;
+    gap: 30px;
+    h2{
+        font-size: 32px;
+    }
+}
+.all__images{
+    display: flex;
+    flex-direction: column;
+    max-width: 43px;
+    gap: 10px;
+    img{
+        width: 100%;
+        height: 43px;
+    }
+}
+.product__img{
+    display: flex;
+    gap: 18px;
+}
+.mainImg{
+    border: 1px solid #767676;
+    padding: 0 60px;
+    max-width: 366px;
+    height: 500px;
+    object-fit: cover;
+}
