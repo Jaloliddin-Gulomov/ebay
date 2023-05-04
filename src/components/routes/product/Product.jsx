@@ -3,10 +3,15 @@ import Container from '../../utils/Components'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import c from './Product.module.scss'
+import { useDispatch } from 'react-redux'
 const Product = () => {
+    const dispatch = useDispatch()
     const { id } = useParams();
     const [productData, setProductData] = useState(null);
     const [activeImg, setactiveImg] = useState(0)
+    const cartProduct = (productData) => {
+        dispatch({product: productData, type: "CART_PRODUCT"})
+    }
     useEffect(() => {
         axios(`https://api.escuelajs.co/api/v1/products/${id}`)
             .then(response => setProductData(response.data))
@@ -56,7 +61,7 @@ const Product = () => {
                                             </div>
                                             <div className={c.button__wrapper}>
                                                 <button className={c.buy} >Buy It Now</button>
-                                                <button className={c.cart}>Add To Cart</button>
+                                                <button onClick={() => cartProduct(productData)} className={c.cart}>Add To Cart</button>
                                             </div>
                                         </div>
                                         <hr />

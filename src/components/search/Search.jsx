@@ -52,7 +52,7 @@ const Search = () => {
                                             <img src={product?.images[0]} alt="product" />
                                             <div>
                                                 <h3>{product?.title}</h3>
-                                                <strong>{product?.price}</strong>
+                                                <strong>${product?.price}</strong>
                                             </div>
                                         </Link>
                                     )
