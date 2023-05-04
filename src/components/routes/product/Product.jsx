@@ -31,23 +31,42 @@ const Product = () => {
                                         onClick={() => setactiveImg(indx)}
                                     />
                                 ))
+
                             }
                         </div>
                         {
                             productData ? (
-                                <img src={productData.images[activeImg]} className={c.mainImg} alt="product" />
+                                <div className={c.product__card}>
+                                    <img src={productData.images[activeImg]} className={c.mainImg} alt="product" />
+                                    <div>
+                                        <h2>{productData.title}</h2>
+                                        <hr />
+                                        <div className={c.description}>
+                                            <p>Description:</p>
+                                            <p>{productData.description}</p>
+                                        </div>
+                                        <hr />
+                                        <div className={c.price__wrapper}>
+                                            <div className={c.pricee}>
+                                                <p>Price:</p>
+                                                <div className={c.price}>
+                                                    <h3>US</h3>
+                                                    <strong>${productData.price}</strong>
+                                                </div>
+                                            </div>
+                                            <div className={c.button__wrapper}>
+                                                <button className={c.buy} >Buy It Now</button>
+                                                <button className={c.cart}>Add To Cart</button>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                </div>
                             ) : (
                                 <></>
                             )}
                     </div>
-                   <div>
-                   {
-                        productData ? 
-                        <h2>{productData.title}</h2>
-                        :
-                        <></>
-                    }
-                   </div>
+
                 </div>
             </Container>
         </>

@@ -7,7 +7,6 @@ import Categories from '../../main/Categories'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import axios from 'axios'
-import Search from '../../search/Search'
 
 const Home = () => {
   const [data, setData] = useState(0)
@@ -18,7 +17,6 @@ const Home = () => {
   return (
     <div>
       <Container>
-        <Search/>
         <div className={c.banner}>
           <img src={banner} alt="banner" />
           <img src={image} alt="save it" />

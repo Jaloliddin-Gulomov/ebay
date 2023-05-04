@@ -22,7 +22,9 @@ const Search = () => {
             <Container>
                 <div className={c.search__wrapper}>
                     <div className={c.search}>
-                        <img src={logo} alt="logo" />
+                        <Link to={'/'}>
+                            <img src={logo} alt="logo" />
+                        </Link>
                         <select className={c.shop__now}>
                             <option>Shop by category</option>
                         </select>
@@ -46,7 +48,7 @@ const Search = () => {
                             <div className={c.product__card__wrapper}>
                                 {
                                     searchData?.map(product =>
-                                        <Link to={`/product/${product.id}`}  className={c.searched__product__card}>
+                                        <Link to={`/product/${product.id}`}  className={c.searched__product__card} onClick={() => { setSearchData([]) }}>
                                             <img src={product?.images[0]} alt="product" />
                                             <div>
                                                 <h3>{product?.title}</h3>
