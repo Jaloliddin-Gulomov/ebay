@@ -7,37 +7,63 @@ import Categories from '../../main/Categories'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import axios from 'axios'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "./styles.scss";
+import { Mousewheel } from "swiper";
 
 const Home = () => {
   const [data, setData] = useState(0)
   useEffect(() => {
     axios("https://api.escuelajs.co/api/v1/products")
-    .then(response => setData(response.data))
+      .then(response => setData(response.data))
   }, [])
   return (
     <div>
       <Container>
         <div className={c.banner}>
           <img src={banner} alt="banner" />
-          <img src={image} alt="save it" />
+          <img className={c.advertising} src={image} alt="save it" />
         </div>
-        <Categories/>
+        <Categories />
         <section className={c.home__product}>
           <h2>Today's Deals – All With Free Shipping</h2>
-          <div className={c.products__wrapper}>
+          <Swiper
+            mousewheel={true}
+            modules={[Mousewheel]}
+            className="mySwiper"
+            breakpoints={{
+              375: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+              },
+              1024: {
+                slidesPerView: 5,
+                spaceBetween: 30
+              }
+            }}
+          >
             {
-              data ? 
-              data.slice(0, 5).map(product =>
-                <Link to={`/product/${product.id}`} className={c.product__card}>
-                  <img src={product.images[0]} alt="Product" />
-                  <h3>{product.title}</h3>
-                  <strong>${product.price}</strong>
-                </Link>
-              )
-              :
-              <></>
+              data ?
+                data.map(product =>
+                  <SwiperSlide>
+                    <Link to={`/product/${product.id}`} className={c.product__card}>
+                      <img src={product.images[0]} alt="Product" />
+                      <div>
+                      <h3>{product.title.slice(0, 15)}</h3>
+                      <strong>${product.price}</strong>
+                      </div>
+                    </Link>
+                  </SwiperSlide>
+                )
+                :
+                <></>
             }
-          </div>
+          </Swiper>
         </section>
       </Container>
     </div>

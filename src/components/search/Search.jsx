@@ -23,7 +23,7 @@ const Search = () => {
                 <div className={c.search__wrapper}>
                     <div className={c.search}>
                         <Link to={'/'}>
-                            <img src={logo} alt="logo" />
+                            <img className={c.home__logo} src={logo} alt="logo" />
                         </Link>
                         <select className={c.shop__now}>
                             <option>Shop by category</option>
@@ -36,14 +36,14 @@ const Search = () => {
                                     <option>All Categories</option>
                                 </select>
                             </div>
-                            <button className={c.search__btn}>Search</button>
+                            <button className={c.search__btn}><FiSearch/></button>
                         </form>
                     </div>
                     {
                         searchText.length >= 1 &&
                         <div className={c.result}>
                             <div className={c.result__nav}>
-                                <h3>#{searchText}</h3>
+                                <h3><span>#{searchText}</span></h3>
                             </div>
                             <div className={c.product__card__wrapper}>
                                 {
