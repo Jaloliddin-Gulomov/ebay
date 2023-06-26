@@ -54,8 +54,8 @@ const Home = () => {
                     <Link to={`/product/${product.id}`} className={c.product__card}>
                       <img src={product.images[0]} alt="Product" />
                       <div>
-                      <h3>{product.title.slice(0, 15)}</h3>
-                      <strong>${product.price}</strong>
+                        <h3>{product.title.slice(0, 15)}</h3>
+                        <strong>${product.price}</strong>
                       </div>
                     </Link>
                   </SwiperSlide>
@@ -65,6 +65,34 @@ const Home = () => {
             }
           </Swiper>
         </section>
+        <hr />
+        <footer>
+          <div>
+            <h4>Buy</h4>
+            <ul>
+              <li><Link className={c.footer__text}>Registration</Link></li>
+              <li><Link className={c.footer__text}>eBay Money Back Guarantee</Link></li>
+              <li><Link className={c.footer__text}>Bidding & buying help</Link></li>
+              <li><Link  className={c.footer__text}>Stores</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Sell</h4>
+            <ul>
+              <li><Link className={c.footer__text}>Start selling</Link></li>
+              <li><Link className={c.footer__text}>Learn to sell</Link></li>
+              <li><Link className={c.footer__text}>Affiliates</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Stay connected</h4>
+            <ul>
+              <li><Link className={c.footer__text}>eBay's Blogs</Link></li>
+              <li><Link className={c.footer__text}>Facebook</Link></li>
+              <li><Link className={c.footer__text}>Twitter</Link></li>
+            </ul>
+          </div>
+        </footer>
       </Container>
     </div>
   )

@@ -9,13 +9,26 @@
     gap: 10px;
 }
 
-.product__card{
+.productCard{
     border-radius: 5px;
     width: 800px;
-    display: flex;
-    gap: 20px;
     border: 1px solid #999999;
     padding: 16px;
+    position: relative;
+   .remove{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    color: #0e71d4;
+    font-weight: 500;
+    &:active{
+        color: dodgerblue;
+    }
+   }
+}
+.product__card{
+    display: flex;
+    gap: 20px;
 }
 .product__img{
     img{

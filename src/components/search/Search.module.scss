@@ -8,10 +8,6 @@
     gap: 12px;
     margin: 20px 0;
     padding: 0 32px;
-    select{
-        height: 100%;
-        border: none;
-    }
 }
 form{
     display: flex;
@@ -31,12 +27,6 @@ form{
     align-items: center;
     padding: 0 20px;
     width: 100%;
-    select{
-        border: none;
-        height: 100%;
-        border-left: 1px solid #C7C7C7;
-        outline: none;
-    }
 }
 .search__btn{
     padding: 0px 62px;
@@ -91,16 +81,13 @@ form{
     }
 }
 @media only screen and (max-width: 768px){
-    select{
-        display: none;
-    }
 }
 @media only screen and (max-width: 600px){
     ::placeholder{
         font-size: 12px;
     }
     .home__logo{
-        max-width: 80px;
+        max-width: 70px;
     }
     .search{
         height: 24px;

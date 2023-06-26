@@ -25,16 +25,10 @@ const Search = () => {
                         <Link to={'/'}>
                             <img className={c.home__logo} src={logo} alt="logo" />
                         </Link>
-                        <select className={c.shop__now}>
-                            <option>Shop by category</option>
-                        </select>
                         <form onSubmit={searchProduct}>
                             <div className={c.input__wrapper}>
                                 <FiSearch />
                                 <input value={searchText} onChange={(e) => setSearchText(e.target.value)} type="text" className={c.search__input} placeholder='Search for anything' />
-                                <select>
-                                    <option>All Categories</option>
-                                </select>
                             </div>
                             <button className={c.search__btn}><FiSearch/></button>
                         </form>
